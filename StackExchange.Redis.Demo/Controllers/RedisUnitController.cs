@@ -21,7 +21,9 @@ namespace StackExchange.Redis.Demo.Controllers
         {
             _cacheManager=cacheManager;
             _redisLock=redisLock;
-            _orderNoGenerator=orderNoGenerator;
+            _orderNoGenerator=orderNoGenerator; 
+
+
         }
 
         #region Redis单元测试
