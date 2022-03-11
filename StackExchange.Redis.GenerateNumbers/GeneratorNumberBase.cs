@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StackExchange.Redis.GenerateNumbers
 {
-    public class GeneratorNumberBase
+    public abstract class GeneratorNumberBase
     {
         private readonly IRedisLock _redisLock;
         private readonly ICacheManager _cacheManager;
@@ -56,30 +56,19 @@ namespace StackExchange.Redis.GenerateNumbers
             return string.Format(valueFormat, currentNumber.ToString().PadLeft(ValueLength(), '0'));
         }
 
-        public virtual Task<long> ReadMaxNumberFromSourceAsync(DateTime nowTime)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task<long> ReadMaxNumberFromSourceAsync(DateTime nowTime);
 
-        public virtual string GetValueFormat(DateTime nowTime)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string GetValueFormat(DateTime nowTime);
 
-        public virtual string GetKey(DateTime nowTime)
-        {
-            throw new NotImplementedException();
-        }
 
-        public virtual int ValueLength()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string GetKey(DateTime nowTime);
 
-        public virtual TimeSpan GetExpireTime()
-        {
-            throw new NotImplementedException();
-        }
+
+        public abstract int ValueLength();
+
+
+        public abstract TimeSpan GetExpireTime();
+       
 
     }
 }
