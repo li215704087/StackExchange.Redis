@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StackExchange.Redis.GenerateNumbers\StackExchange.Redis.GenerateNumbers.csproj" />
+    <ProjectReference Include="..\StackExchange.Redis.Helper\StackExchange.Redis.Helper.csproj" />
+  </ItemGroup>
+
+
+</Project>
